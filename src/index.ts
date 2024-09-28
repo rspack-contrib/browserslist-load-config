@@ -219,9 +219,8 @@ export type LoadConfigOptions = {
 };
 
 export function loadConfig(opts: LoadConfigOptions): string[] | undefined {
-  const file = opts.config;
-  if (file) {
-    return pickEnv(parsePackageOrReadConfig(file), opts);
+  if (opts.config) {
+    return pickEnv(parsePackageOrReadConfig(opts.config), opts);
   }
 
   if (opts.path) {

@@ -18,16 +18,31 @@ Install:
 npm add browserslist-load-config -D
 ```
 
-Add plugin to your `rsbuild.config.ts`:
+Example:
 
 ```ts
-// rsbuild.config.ts
-import { pluginExample } from "browserslist-load-config";
+const config = browserslist.loadConfig({
+  /**
+   * Specify the path to the configuration file, can be a relative or absolute path
+   */
+  config: "./path/to/config/file",
 
-export default {
-  plugins: [pluginExample()],
-};
+  /**
+   * Specify the directory where the configuration file is located
+   */
+  path: "./path/to/project/root",
+
+  /**
+   * Specify the environment to load
+   * @default "production"
+   */
+  env: "production",
+});
+
+console.log(config);
 ```
+
+If both `config` and `path` are provided, `config` will be used.
 
 ## Credits
 
