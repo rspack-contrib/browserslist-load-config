@@ -29,6 +29,10 @@ export default {
 };
 ```
 
+## Credits
+
+Thanks [Andrey Sitnik](https://github.com/ai) for creating the [Browserslist](https://github.com/browserslist/browserslist) which is under [MIT License](https://github.com/browserslist/browserslist/blob/main/LICENSE).
+
 ## License
 
 [MIT](./LICENSE).
