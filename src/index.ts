@@ -21,9 +21,7 @@ function isFile(file: string) {
     return isFileCache[file];
   }
   const result = fs.existsSync(file) && fs.statSync(file).isFile();
-  if (!process.env.BROWSERSLIST_DISABLE_CACHE) {
-    isFileCache[file] = result;
-  }
+  isFileCache[file] = result;
   return result;
 }
 
@@ -131,20 +129,10 @@ function pickEnv(config: Record<string, string[]>, opts: LoadConfigOptions) {
   return config[name] || config.defaults;
 }
 
-function pathInRoot(p: string) {
-  if (!process.env.BROWSERSLIST_ROOT_PATH) return true;
-  const rootPath = path.resolve(process.env.BROWSERSLIST_ROOT_PATH);
-  if (path.relative(rootPath, p).substring(0, 2) === '..') {
-    return false;
-  }
-  return true;
-}
-
 function eachParent(file: string, callback: (dir: string) => void) {
   const dir = isFile(file) ? path.dirname(file) : file;
   let loc = path.resolve(dir);
   do {
-    if (!pathInRoot(loc)) break;
     const result = callback(loc);
     if (typeof result !== 'undefined') return result;
   } while (loc !== (loc = path.dirname(loc)));
@@ -211,17 +199,16 @@ function findConfig(from: string): Record<string, string[]> | undefined {
     resolved = parsePackageOrReadConfig(configFile);
   }
 
-  if (!process.env.BROWSERSLIST_DISABLE_CACHE) {
-    const configDir = configFile && path.dirname(configFile);
-    eachParent(from, (dir) => {
-      if (resolved) {
-        configCache[dir] = resolved;
-      }
-      if (dir === configDir) {
-        return null;
-      }
-    });
-  }
+  const configDir = configFile && path.dirname(configFile);
+  eachParent(from, (dir) => {
+    if (resolved) {
+      configCache[dir] = resolved;
+    }
+    if (dir === configDir) {
+      return null;
+    }
+  });
+
   return resolved;
 }
 
@@ -231,14 +218,8 @@ export type LoadConfigOptions = {
   env?: string;
 };
 
-export function loadConfig(
-  opts: LoadConfigOptions,
-): string | string[] | undefined {
-  if (process.env.BROWSERSLIST) {
-    return process.env.BROWSERSLIST;
-  }
-
-  const file = opts.config || process.env.BROWSERSLIST_CONFIG;
+export function loadConfig(opts: LoadConfigOptions): string[] | undefined {
+  const file = opts.config;
   if (file) {
     return pickEnv(parsePackageOrReadConfig(file), opts);
   }
