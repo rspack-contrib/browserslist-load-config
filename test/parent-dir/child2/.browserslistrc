@@ -1,0 +1,6 @@
+
+[production]
+firefox >= 10
+
+[development]
+last 3 firefox version
