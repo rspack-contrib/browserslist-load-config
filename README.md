@@ -14,10 +14,16 @@ This package is a fork of [browserslist.loadConfig](https://github.com/browsersl
 
 Compare to `browserslist.loadConfig`, this package has the following improvements and differences:
 
+- **27 times** smaller bundle size
+- **140 times** smaller install size.
 - Zero dependencies.
 - Written in TypeScript.
 - Smaller and faster.
 - Does not support env variables.
+
+> See [bundlephobia - browserslist-load-config](https://bundlephobia.com/package/browserslist-load-config) vs [bundlephobia - browserslist](https://bundlephobia.com/package/browserslist) for bundle size comparison.
+
+> See [packagephobia - browserslist-load-config](https://packagephobia.com/result?p=browserslist-load-config) vs [packagephobia - browserslist](https://packagephobia.com/result?p=browserslist) for install size comparison.  
 
 ## Credits
 
