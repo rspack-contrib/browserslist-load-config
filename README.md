@@ -1,13 +1,13 @@
-# rsbuild-plugin-example
+# browserslist-load-config
 
-rsbuild-plugin-example is a Rsbuild plugin to do something.
+The `browserslist.loadConfig` method exported as a module.
 
 <p>
-  <a href="https://npmjs.com/package/rsbuild-plugin-example">
-   <img src="https://img.shields.io/npm/v/rsbuild-plugin-example?style=flat-square&colorA=564341&colorB=EDED91" alt="npm version" />
+  <a href="https://npmjs.com/package/browserslist-load-config">
+   <img src="https://img.shields.io/npm/v/browserslist-load-config?style=flat-square&colorA=564341&colorB=EDED91" alt="npm version" />
   </a>
   <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square&colorA=564341&colorB=EDED91" alt="license" />
-  <a href="https://npmcharts.com/compare/rsbuild-plugin-example?minimal=true"><img src="https://img.shields.io/npm/dm/rsbuild-plugin-example.svg?style=flat-square&colorA=564341&colorB=EDED91" alt="downloads" /></a>
+  <a href="https://npmcharts.com/compare/browserslist-load-config?minimal=true"><img src="https://img.shields.io/npm/dm/browserslist-load-config.svg?style=flat-square&colorA=564341&colorB=EDED91" alt="downloads" /></a>
 </p>
 
 ## Usage
@@ -15,34 +15,18 @@ rsbuild-plugin-example is a Rsbuild plugin to do something.
 Install:
 
 ```bash
-npm add rsbuild-plugin-example -D
+npm add browserslist-load-config -D
 ```
 
 Add plugin to your `rsbuild.config.ts`:
 
 ```ts
 // rsbuild.config.ts
-import { pluginExample } from "rsbuild-plugin-example";
+import { pluginExample } from "browserslist-load-config";
 
 export default {
   plugins: [pluginExample()],
 };
-```
-
-## Options
-
-### foo
-
-Some description.
-
-- Type: `string`
-- Default: `undefined`
-- Example:
-
-```js
-pluginExample({
-  foo: "bar",
-});
 ```
 
 ## License
