@@ -1,0 +1,9 @@
+{
+  "name": "test-package-json-env",
+  "private": true,
+  "version": "0.0.1",
+  "browserslist": {
+    "test": ["last 2 versions", "not ie <= 11", "not ie_mob <= 11"],
+    "production": ["Chrome >= 50"]
+  }
+}
