@@ -12,7 +12,7 @@
 
 This package is a fork of [browserslist.loadConfig](https://github.com/browserslist/browserslist) with some modifications to make it faster.
 
-Compare to `browserslist.loadConfig`, this package has the following improvements and differences:
+Compare to `browserslist`, this package has the following improvements and differences:
 
 - **27 times** smaller bundle size
 - **140 times** smaller install size.
