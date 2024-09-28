@@ -1,7 +1,5 @@
 # browserslist-load-config
 
-The `browserslist.loadConfig` method exported as a module.
-
 <p>
   <a href="https://npmjs.com/package/browserslist-load-config">
    <img src="https://img.shields.io/npm/v/browserslist-load-config?style=flat-square&colorA=564341&colorB=EDED91" alt="npm version" />
@@ -9,6 +7,21 @@ The `browserslist.loadConfig` method exported as a module.
   <img src="https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square&colorA=564341&colorB=EDED91" alt="license" />
   <a href="https://npmcharts.com/compare/browserslist-load-config?minimal=true"><img src="https://img.shields.io/npm/dm/browserslist-load-config.svg?style=flat-square&colorA=564341&colorB=EDED91" alt="downloads" /></a>
 </p>
+
+## Introduction
+
+This package is a fork of [browserslist.loadConfig](https://github.com/browserslist/browserslist) with some modifications to make it faster.
+
+Compare to `browserslist.loadConfig`, this package has the following improvements and differences:
+
+- Zero dependencies.
+- Written in TypeScript.
+- Smaller and faster.
+- Does not support env variables.
+
+## Credits
+
+Thanks [Andrey Sitnik](https://github.com/ai) for creating the [Browserslist](https://github.com/browserslist/browserslist) which is under [MIT License](https://github.com/browserslist/browserslist/blob/main/LICENSE).
 
 ## Usage
 
@@ -43,10 +56,6 @@ console.log(config);
 ```
 
 If both `config` and `path` are provided, `config` will be used.
-
-## Credits
-
-Thanks [Andrey Sitnik](https://github.com/ai) for creating the [Browserslist](https://github.com/browserslist/browserslist) which is under [MIT License](https://github.com/browserslist/browserslist/blob/main/LICENSE).
 
 ## License
 
