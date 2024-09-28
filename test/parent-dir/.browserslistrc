@@ -1,0 +1,6 @@
+
+[production]
+chrome >= 66
+
+[development]
+last 3 chrome version

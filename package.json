@@ -14,13 +14,16 @@
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "tsup",
     "dev": "tsup --watch",
     "lint": "biome check .",
     "lint:write": "biome check . --write",
-    "prepare": "simple-git-hooks && npm run build"
+    "prepare": "simple-git-hooks && npm run build",
+    "test": "vitest"
   },
   "simple-git-hooks": {
     "pre-commit": "npx nano-staged"
@@ -36,7 +39,8 @@
     "nano-staged": "^0.8.0",
     "simple-git-hooks": "^2.11.1",
     "tsup": "^8.2.4",
-    "typescript": "^5.5.4"
+    "typescript": "^5.5.4",
+    "vitest": "^2.1.1"
   },
   "packageManager": "pnpm@9.9.0",
   "publishConfig": {
