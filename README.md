@@ -23,7 +23,7 @@ Compare to `browserslist`, this package has the following improvements and diffe
 
 > See [bundlephobia - browserslist-load-config](https://bundlephobia.com/package/browserslist-load-config) vs [bundlephobia - browserslist](https://bundlephobia.com/package/browserslist) for bundle size comparison.
 
-> See [packagephobia - browserslist-load-config](https://packagephobia.com/result?p=browserslist-load-config) vs [packagephobia - browserslist](https://packagephobia.com/result?p=browserslist) for install size comparison.  
+> See [packagephobia - browserslist-load-config](https://packagephobia.com/result?p=browserslist-load-config) vs [packagephobia - browserslist](https://packagephobia.com/result?p=browserslist) for install size comparison.
 
 ## Credits
 
@@ -37,15 +37,27 @@ Install:
 npm add browserslist-load-config -D
 ```
 
-Example:
+### loadConfig
 
 ```ts
-const config = browserslist.loadConfig({
-  /**
-   * Specify the path to the configuration file, can be a relative or absolute path
-   */
-  config: "./path/to/config/file",
+import { loadConfig } from "browserslist-load-config";
 
+// Pass a path to the configuration file
+const config = loadConfig({
+  /**
+   * Specify the directory where the configuration file is located
+   */
+  path: "./path/to/project/root",
+
+  /**
+   * Specify the environment to load
+   * @default "production"
+   */
+  env: "production",
+});
+
+// Pass a browserslist config directly
+const config = loadConfig({
   /**
    * Specify the directory where the configuration file is located
    */
@@ -59,9 +71,37 @@ const config = browserslist.loadConfig({
 });
 
 console.log(config);
+/**
+ * [
+ *   // browserslist config
+ * ]
+ */
 ```
 
 If both `config` and `path` are provided, `config` will be used.
+
+### findConfig
+
+```ts
+import { findConfig } from "browserslist-load-config";
+
+const config = findConfig("./path/to/project/root");
+
+console.log(config);
+/**
+ * {
+ *   defaults: [
+ *     // default browserslist config
+ *   ],
+ *   development: [
+ *     // development browserslist config
+ *   ],
+ *   production: [
+ *     // production browserslist config
+ *   ],
+ * }
+ */
+```
 
 ## License
 
