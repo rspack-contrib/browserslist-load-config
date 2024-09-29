@@ -185,7 +185,7 @@ function findConfigFile(from: string) {
 
 const configCache: Record<string, Record<string, string[]>> = {};
 
-function findConfig(from: string): Record<string, string[]> | undefined {
+export function findConfig(from: string): Record<string, string[]> | undefined {
   from = path.resolve(from);
 
   const fromDir = isFile(from) ? path.dirname(from) : from;

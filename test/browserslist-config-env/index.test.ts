@@ -1,6 +1,6 @@
 import { expect } from 'vitest';
 import { test } from 'vitest';
-import { loadConfig } from '../../src';
+import { findConfig, loadConfig } from '../../src';
 
 test('load browserslist from .browserslistrc with env: development', () => {
   expect(loadConfig({ path: __dirname, env: 'development' })).toEqual([
@@ -17,4 +17,16 @@ test('load browserslist from .browserslistrc with env: production', () => {
     'firefox >= 78',
     'safari >= 14',
   ]);
+});
+
+test('find browserslist from .browserslistrc with env: development', () => {
+  expect(findConfig(__dirname)).toEqual({
+    defaults: [],
+    development: [
+      'last 1 chrome version',
+      'last 1 firefox version',
+      'last 1 safari version',
+    ],
+    production: ['chrome >= 87', 'edge >= 88', 'firefox >= 78', 'safari >= 14'],
+  });
 });
