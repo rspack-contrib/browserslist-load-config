@@ -56,7 +56,7 @@ function parsePackage(file: string): Record<string, string[]> {
     list = { defaults: list };
   }
   if (typeof list === 'string') {
-    list = { defaults: list.split(',').map((item) => item.trim()) };
+    list = parseConfig(list);
   }
   for (const i in list) {
     check(list[i]);
