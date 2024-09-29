@@ -52,8 +52,11 @@ function parsePackage(file: string): Record<string, string[]> {
     );
   }
   let list = config.browserslist;
-  if (Array.isArray(list) || typeof list === 'string') {
+  if (Array.isArray(list)) {
     list = { defaults: list };
+  }
+  if (typeof list === 'string') {
+    list = parseConfig(list);
   }
   for (const i in list) {
     check(list[i]);
