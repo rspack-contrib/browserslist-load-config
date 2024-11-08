@@ -1,6 +1,6 @@
 import { expect } from 'vitest';
 import { test } from 'vitest';
-import { findConfig, loadConfig } from '../../src';
+import { findConfig, loadConfig } from '../../dist';
 
 test('load browserslist from .browserslistrc', () => {
   expect(loadConfig({ path: __dirname })).toEqual([
