@@ -34,11 +34,11 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^1.9.4",
-    "@rslib/core": "^0.1.1",
-    "@types/node": "^22.10.1",
+    "@rslib/core": "^0.5.2",
+    "@types/node": "^22.13.7",
     "nano-staged": "^0.8.0",
     "simple-git-hooks": "^2.11.1",
-    "typescript": "^5.7.2",
+    "typescript": "^5.8.2",
     "vitest": "^2.1.6"
   },
   "packageManager": "pnpm@10.5.2",
