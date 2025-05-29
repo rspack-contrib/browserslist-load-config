@@ -39,6 +39,8 @@ npm add browserslist-load-config -D
 
 ### loadConfig
 
+Loads the browserslist configuration from the specified file or directory, returns the browserslist config of specified environment.
+
 - **Type:**
 
 ```ts
@@ -88,6 +90,8 @@ console.log(config);
 ```
 
 ### findConfig
+
+Finds the browserslist configuration file in the specified directory, returns the resolved browserslist config object.
 
 - **Type:**
 
