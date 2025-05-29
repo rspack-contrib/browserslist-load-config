@@ -45,6 +45,7 @@ npm add browserslist-load-config -D
 type LoadConfigOptions = {
   /**
    * Specify the path to the configuration file
+   * If both `config` and `path` are provided, `config` will be used
    */
   config?: string;
   /**
@@ -85,8 +86,6 @@ console.log(config);
  * ]
  */
 ```
-
-If both `config` and `path` are provided, `config` will be used.
 
 ### findConfig
 
