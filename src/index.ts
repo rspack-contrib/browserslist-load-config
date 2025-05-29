@@ -216,8 +216,18 @@ export function findConfig(from: string): Record<string, string[]> | undefined {
 }
 
 export type LoadConfigOptions = {
+  /**
+   * Specify the path to the configuration file
+   */
   config?: string;
+  /**
+   * Specify the directory where the configuration file is located
+   */
   path?: string;
+  /**
+   * Specify the environment to load
+   * @default "production"
+   */
   env?: string;
 };
 
