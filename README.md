@@ -39,34 +39,45 @@ npm add browserslist-load-config -D
 
 ### loadConfig
 
+Loads the browserslist configuration from the specified file or directory, returns the browserslist config of specified environment.
+
+- **Type:**
+
+```ts
+type LoadConfigOptions = {
+  /**
+   * Specify the path to the configuration file
+   * If both `config` and `path` are provided, `config` will be used
+   */
+  config?: string;
+  /**
+   * Specify the directory where the configuration file is located
+   */
+  path?: string;
+  /**
+   * Specify the environment to load
+   * @default "production"
+   */
+  env?: string;
+};
+
+function loadConfig(opts: LoadConfigOptions): string[] | undefined;
+```
+
+- **Example:**
+
 ```ts
 import { loadConfig } from "browserslist-load-config";
 
 // Pass a path to the configuration file
 const config = loadConfig({
-  /**
-   * Specify the directory where the configuration file is located
-   */
   path: "./path/to/project/root",
-
-  /**
-   * Specify the environment to load
-   * @default "production"
-   */
   env: "production",
 });
 
 // Pass a browserslist config directly
 const config = loadConfig({
-  /**
-   * Specify the directory where the configuration file is located
-   */
-  path: "./path/to/project/root",
-
-  /**
-   * Specify the environment to load
-   * @default "production"
-   */
+  config: "./path/to/project/root/.browserslistrc",
   env: "production",
 });
 
@@ -78,9 +89,17 @@ console.log(config);
  */
 ```
 
-If both `config` and `path` are provided, `config` will be used.
-
 ### findConfig
+
+Finds the browserslist configuration file in the specified directory, returns the resolved browserslist config object.
+
+- **Type:**
+
+```ts
+function findConfig(from: string): Record<string, string[]> | undefined;
+```
+
+- **Example:**
 
 ```ts
 import { findConfig } from "browserslist-load-config";
