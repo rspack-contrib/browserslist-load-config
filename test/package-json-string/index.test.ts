@@ -1,5 +1,5 @@
-import { expect } from 'vitest';
-import { test } from 'vitest';
+import { expect } from '@rstest/core';
+import { test } from '@rstest/core';
 import { loadConfig } from '../../dist';
 
 test('load string browserslist from package.json', () => {
