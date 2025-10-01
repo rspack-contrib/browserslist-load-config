@@ -1,5 +1,4 @@
-import { expect } from '@rstest/core';
-import { test } from '@rstest/core';
+import { expect, test } from '@rstest/core';
 import { loadConfig } from '../../dist';
 
 test('load string browserslist from package.json', () => {
