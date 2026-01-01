@@ -1,7 +1,7 @@
 {
   "name": "browserslist-load-config",
   "version": "1.0.1",
-  "repository": "https://github.com/rspack-contrib/browserslist-load-config",
+  "repository": "https://github.com/rstackjs/browserslist-load-config",
   "license": "MIT",
   "type": "module",
   "exports": {
